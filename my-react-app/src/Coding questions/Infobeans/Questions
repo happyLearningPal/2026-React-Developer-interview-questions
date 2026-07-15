@@ -1,0 +1,72 @@
+React / Frontend Interview Questions
+Tell me about yourself.
+Tell the architecture of your project.
+Tell about the configuration of your project.
+What build tool did you use?
+For application performance, what have you used in your project? Any tools?
+For testing, what have you used?
+To perform E2E testing, what have you used?
+Which AI tools have you used?
+Is there any automation done to automatically write test cases for newly added components?
+How can two Microfrontends communicate with each other?
+How are two different versions of React maintained in a Microfrontend architecture?
+Which module loader/controller did you use for Microfrontends?
+What is the difference between a Monolithic Frontend and a Microfrontend architecture?
+What are the advantages of a Monolithic Frontend?
+What are the disadvantages of a Monolithic Frontend?
+What are the advantages of a Microfrontend architecture?
+What are the disadvantages of a Microfrontend architecture?
+What is the difference between Server-Side Rendering (SSR) and Client-Side Rendering (CSR)?
+Have you used Redux Toolkit?
+What is the difference between interface and type in TypeScript?
+What is Accessibility?
+What are the Accessibility principles?
+What are the Accessibility levels (WCAG A, AA, AAA)?
+What is npm audit?
+What does useEffect return?
+What are Web Workers?
+What is the difference between setCount(count + 1) and setCount(prev => prev + 1)?
+JavaScript / CSS
+What is Critical Rendering?
+What is the difference between for...in and for...of?
+What is the difference between Flexbox and CSS Grid?
+Coding Question
+How would you improve the following React component?
+export default function ProductPage() {
+  const [products, setProducts] = useState([]);
+  const [search, setSearch] = useState("");
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    fetch("https://dummyjson.com/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data.products))
+      .catch((err) => console.error(err));
+  }, []);
+
+  const filtered = products.filter((p) =>
+    p.title.toLowerCase().includes(search.toLowerCase());
+
+  return (
+    <div>
+      <h2>Product List</h2>
+
+      <input
+        placeholder="Search..."
+        onChange={(e) => setSearch(e.target.value)}
+      />
+
+      <ul>
+        {filtered.map((item) => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
+
+      <h3>Cart ({cart.length})</h3>
+
+      {cart.map((item, index) => (
+        <div key={index}>{item.title}</div>
+      ))}
+    </div>
+  );
+}
