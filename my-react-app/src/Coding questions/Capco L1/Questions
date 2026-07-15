@@ -1,0 +1,71 @@
+1.Tell me about yourself
+
+2. import React, { useState } from "react";
+
+function App2() {
+const [messages, setMessages] = useState([
+{ id: 1, text: "Hello!" },
+{ id: 2, text: "Welcome to chat." },
+]);
+
+    const addMessage = () => {
+    	setMessages([...messages, { id: Date.now(), text: "New message" }]);
+    };
+
+    return (
+    	<div>
+    		<button onClick={addMessage}>Add Message</button>
+    		<ul>
+    			{messages.map((msg) => (
+    				<li key={msg.id}>{msg.text}</li> // ❌ All re-render on new message
+    			))}
+    		</ul>
+    	</div>
+    );
+
+}
+
+export default ChatApp;
+
+3. import React, { useState } from "react";
+
+function ExpensiveChild({ onClick }) {
+console.log("Child rendered");
+return <button onClick={onClick}>Click Me</button>;
+}
+
+export default function App2() {
+const [count, setCount] = useState(0);
+
+    const handleClick = () => {
+    	setCount((prev) => prev + 1);
+    };
+
+    return (
+    	<div>
+    		<p>Count: {count}</p>
+    		<ExpensiveChild onClick={handleClick} />
+    	</div>
+    );
+
+}
+
+4. import React, { useState, useEffect } from "react";
+
+function Counter() {
+const [count, setCount] = useState(0);
+
+    useEffect(() => {
+    	setCount(count + 1);
+    }, [count]);
+
+    return (
+    	<div>
+    		<p>Count: {count}</p>
+    		<button onClick={() => setCount(count + 1)}>Increment</button>
+    	</div>
+    );
+
+}
+
+export default Counter;
