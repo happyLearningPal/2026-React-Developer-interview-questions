@@ -1,0 +1,35 @@
+
+Intro & Tech used
+Architecture of project
+Deep discussion on state management : 
+- Why redux toolkit used
+- Why Context used
+
+Questions on Micro-Frontend - why MFE
+How authentication Works
+When a use is timeout then what happens - refresh token
+
+What is debounce?
+Why we need debounce why can't we acheive it just by using setTimeout?
+What is Virtualization, infinite scroll
+
+Diff between controlled and uncontrolled component
+
+Why to use typescript?
+Diff between interfaces and types
+
+Simple output Question:
+
+1. let obj1 = {
+    name: 'Ram'
+}
+let obj2 = {
+    name: 'Ram'
+}
+console.log(obj1 === obj2)
+
+2. const arr = [1,2,3,4];
+
+arr.push([5]);
+
+setCount(arr)
